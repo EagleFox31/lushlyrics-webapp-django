@@ -11,7 +11,7 @@ The first thing to do is to clone the repository:
 
 ```sh
 $ git clone https://github.com/mohammedwed/lushlyrics-webapp-django.git
-$ cd spotify-clone-django
+$ cd lushlyrics-webapp-django
 ```
 
 Create a virtual environment to install dependencies in and activate it:
