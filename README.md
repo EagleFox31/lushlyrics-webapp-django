@@ -10,7 +10,7 @@ check it out here https://youttify.pythonanywhere.com/demo/
 The first thing to do is to clone the repository:
 
 ```sh
-$ git clone https://github.com/techakhil-me/spotify-clone-django
+$ git clone https://github.com/mohammedwed/lushlyrics-webapp-django.git
 $ cd spotify-clone-django
 ```
 
