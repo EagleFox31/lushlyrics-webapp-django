@@ -51,6 +51,15 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.DEBUG: 'debug',
+    messages.INFO: 'info',
+    messages.SUCCESS: 'success',
+    messages.WARNING: 'warning',
+    messages.ERROR: 'error',
+}
+
 ROOT_URLCONF = 'youtify.urls'
 
 TEMPLATES = [
@@ -131,3 +140,17 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGIN_REDIRECT_URL = 'profile'
 LOGIN_URL = '/login/'
 
+# settings.py
+
+EMAIL_BACKEND = 'email_backend.CustomEmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'darrenthay+no-reply@gmail.com'
+EMAIL_HOST_PASSWORD = 'hhsm djux bxqg liit'
+
+# Adresse de l'expéditeur
+DEFAULT_FROM_EMAIL = 'no-reply@youtify.com'
+# Nom de domaine et nom du site
+DOMAIN = 'http://127.0.0.1:8000/'
+SITE_NAME = 'Youtify'

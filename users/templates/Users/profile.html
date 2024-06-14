@@ -1,7 +1,10 @@
 {% extends "base_generic.html" %}
+
 {% block content %}
 <div class="container">
     <h2 class="my-4">Profile</h2>
     <p>Welcome, {{ user.username }}!</p>
+    <p>Email: {{ user.email }}</p>
+    <a href="/" class="btn btn-primary">Go to Player</a>
 </div>
 {% endblock %}

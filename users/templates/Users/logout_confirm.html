@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="container">
+    <h2 class="my-4">Logout</h2>
+    <p>Are you sure you want to logout?</p>
+    <form method="post" action="{% url 'logout_confirm' %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Yes, logout</button>
+        <a href="{% url 'profile' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}

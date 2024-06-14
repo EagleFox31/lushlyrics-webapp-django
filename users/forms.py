@@ -1,9 +1,11 @@
-# users/forms.py
 from django import forms
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, PasswordResetForm
 from django.core.exceptions import ValidationError
 import re
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control'}))
@@ -50,3 +52,11 @@ class UserRegisterForm(UserCreationForm):
         if not re.search(r'[@$!%*?&]', password1):
             raise ValidationError('Password must contain at least one special character (@$!%*?&).')
         return password1
+
+
+class CustomPasswordResetForm(PasswordResetForm):
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if not User.objects.filter(email=email).exists():
+            raise ValidationError("Aucun compte n'est associé à cette adresse email.")
+        return email
