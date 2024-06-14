@@ -57,6 +57,11 @@ The `base_generic.html` file is the base template used across the application to
 - `password_reset_confirm.html`: Password reset confirmation page.
 - `password_reset_complete.html`: Password reset complete page.
 
+### Error Templates
+
+- `404.html`: Template for 404 Page Not Found error.
+- `500.html`: Template for 500 Internal Server Error.
+
 ## Logging
 
 Logs are configured for debugging purposes and can be found in the project's root directory.
